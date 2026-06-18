@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.vite/
+*.local
+.vite-dev*.log
+data/*.zip
+data/VSDATA_*.csv
+__pycache__/
+*.pyc

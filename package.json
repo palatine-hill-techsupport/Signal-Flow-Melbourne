@@ -1,0 +1,39 @@
+{
+  "name": "signal-flow-melbourne",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A browser-native civic dashboard for Victorian traffic signal volume data.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "data:build": "node scripts/preprocess-data.mjs",
+    "data:download": "node scripts/download-datavic.mjs",
+    "data:refresh": "npm run data:download && npm run data:build"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.0.0",
+    "adm-zip": "^0.5.16",
+    "csv-parse": "^5.6.0",
+    "echarts": "^5.6.0",
+    "echarts-for-react": "^3.0.2",
+    "leaflet": "^1.9.4",
+    "lucide-react": "^0.468.0",
+    "papaparse": "^5.4.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-leaflet": "^5.0.0",
+    "@e965/xlsx": "^0.20.3"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.7",
+    "@types/leaflet": "^1.9.16",
+    "@types/node": "^22.10.2",
+    "@types/papaparse": "^5.3.15",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3"
+  }
+}
