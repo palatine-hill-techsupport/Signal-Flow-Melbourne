@@ -136,14 +136,17 @@ The app is configured for the repository path:
 base: "/Signal-Flow-Melbourne/"
 ```
 
-The workflow in `.github/workflows/deploy.yml` installs dependencies, runs `npm run build`, uploads `dist/`, and deploys through GitHub Pages.
+The workflow in `.github/workflows/deploy.yml` installs dependencies, runs `npm run build`, and publishes the built `dist/` folder to the `gh-pages` branch.
 
 To deploy:
 
 1. Commit the app and generated `public/data/` files.
 2. Push to `main` on `palatine-hill-techsupport/Signal-Flow-Melbourne`.
-3. In GitHub, enable Pages deployment from GitHub Actions if it is not already enabled.
-4. The workflow publishes the static dashboard.
+3. In GitHub Pages settings, choose `Deploy from a branch`.
+4. Set the branch to `gh-pages` and the folder to `/root`.
+5. The workflow updates `gh-pages` whenever `main` changes.
+
+Do not point GitHub Pages at `main / root`. That serves the Vite source `index.html`, which is only for local development and will show a blank screen on Pages.
 
 ## Design Palette
 
