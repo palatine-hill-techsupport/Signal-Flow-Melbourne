@@ -510,12 +510,92 @@ h1 {
 }
 
 .map-shell {
+  position: relative;
   overflow: hidden;
   border: 1px solid var(--border);
 }
 
 .leaflet-container {
   font: inherit;
+}
+
+.map-legend {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  z-index: 500;
+  display: grid;
+  grid-template-columns: minmax(120px, auto) minmax(260px, auto);
+  gap: 12px;
+  max-width: calc(100% - 28px);
+  padding: 12px;
+  color: var(--text);
+  background: color-mix(in srgb, var(--surface), transparent 8%);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.map-legend-block {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+}
+
+.map-legend strong {
+  font-size: 0.78rem;
+}
+
+.map-legend span {
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.25;
+}
+
+.size-scale,
+.colour-scale {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.size-dot {
+  display: inline-block;
+  background: var(--primary);
+  border: 2px solid color-mix(in srgb, var(--primary), #ffffff 18%);
+  border-radius: 999px;
+  opacity: 0.7;
+}
+
+.size-dot-small {
+  width: 10px;
+  height: 10px;
+}
+
+.size-dot-medium {
+  width: 16px;
+  height: 16px;
+}
+
+.size-dot-large {
+  width: 24px;
+  height: 24px;
+}
+
+.colour-scale span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.colour-scale i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.24);
 }
 
 .table-shell {
@@ -740,5 +820,13 @@ tr:last-child td {
   .map-shell,
   .leaflet-map {
     height: 420px;
+  }
+
+  .map-legend {
+    right: 10px;
+    bottom: 10px;
+    grid-template-columns: 1fr;
+    max-height: 180px;
+    overflow: auto;
   }
 }
